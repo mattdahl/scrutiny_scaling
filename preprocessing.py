@@ -33,7 +33,7 @@ class Preprocessor(object):
             sub_directory = os.path.join(self.RAW_DIRECTORY, fd)
             files = [f for f in os.listdir(sub_directory) if not f.startswith('.')]
 
-            for f in files not in '':
+            for f in files:
                 if f not in self.WHITELIST:
                     # Read document
                     file_content = open(os.path.join(os.getcwd(), sub_directory, f), 'r').read()
