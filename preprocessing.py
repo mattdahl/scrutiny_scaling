@@ -13,8 +13,8 @@ from nltk import pos_tag, sent_tokenize, wordpunct_tokenize
 class Preprocessor(object):
     def __init__(self):
         # File directories
-        self.RAW_DIRECTORY = 'data/corpus/raw/'
-        self.PROCESSED_DIRECTORY = 'data/corpus/preprocessed/'
+        self.RAW_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/corpus/raw'
+        self.PROCESSED_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/corpus/preprocessed'
 
         # Regexes
         self.FILE_NAME_REGEX = re.compile(r'(.+)(?=(\d{3}) U\.S\. (\d+)(\.txt))')
@@ -31,19 +31,19 @@ class Preprocessor(object):
 
         for fd in file_directories:
             sub_directory = os.path.join(self.RAW_DIRECTORY, fd)
-            files = [f for f in os.listdir(sub_directory) if not f.startswith('.')]
+            file_names = [f for f in os.listdir(sub_directory) if not f.startswith('.')]
 
-            for f in files:
+            for f in file_names:
                 if f not in self.WHITELIST:
                     # Read document
-                    file_content = open(os.path.join(os.getcwd(), sub_directory, f), 'r').read()
+                    file_content = open(os.path.join(sub_directory, f), 'r').read()
 
                     # Process document
                     try:
                         majority_opinion = self._extract_majority_opinion(opinion_text=file_content)
                     except LookupError:
                         sys.exit('Error! No opinion found in file {}.'.format(f))
-                    processed_opinion = list(self._tokenize_and_tag(majority_opinion))
+                    processed_opinion = list(self._tokenize_and_tag(text=majority_opinion))
                     new_file_name = self._rewrite_file_name(file_directory=fd, file_name=f)
 
                     # Save processed document to disk
@@ -52,8 +52,8 @@ class Preprocessor(object):
                     new_file.close()
                     print('Wrote {}...'.format(new_file_name))
 
-    def _tokenize_and_tag(self, document):
-        for paragraph in document.splitlines():
+    def _tokenize_and_tag(self, text):
+        for paragraph in text.splitlines():
             yield [
                 pos_tag(wordpunct_tokenize(sentence))
                 for sentence in sent_tokenize(paragraph)
@@ -65,16 +65,16 @@ class Preprocessor(object):
         category = file_directory.upper()
         citation = match.group(2) + '|' + match.group(3)
         case_name = match.group(1)[:-2].replace(' ', '_')
-        extension = match.group(4)
+        extension = '.pickle'
 
-        return '-'.join([category, citation, case_name, extension])
+        return '-'.join([category, citation, case_name]) + extension
 
     def _extract_majority_opinion(self, opinion_text):
         majority_opinion = re.search(self.MAJORITY_OPINION_REGEX, opinion_text)
         if majority_opinion is None:
             raise LookupError
         else:
-            return majority_opinion.group() # Take the first (only) extracted opinion
+            return majority_opinion.group()  # Take the first (only) extracted opinion
 
     def _build_majority_opinion_regex(self):
         # Regex explanation:
