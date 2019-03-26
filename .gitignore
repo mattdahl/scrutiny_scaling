@@ -4,5 +4,6 @@ Rplots.pdf
 
 # Hidden files
 .*
+*.pyc
 !.gitignore
 .Rproj.user
