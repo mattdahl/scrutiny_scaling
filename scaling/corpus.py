@@ -5,6 +5,7 @@ import numpy as np
 
 from nltk.corpus.reader.api import CategorizedCorpusReader, CorpusReader
 from sklearn.model_selection import KFold
+from normalizer import OpinionNormalizer
 
 
 # Reader that consumes the preprocessed, pickled version of the corpus
@@ -106,3 +107,19 @@ class CorpusLoader(object):
             y_test = self.labels(test_index)
 
             yield (X_train, X_test, y_train, y_test)
+
+
+# # Show that we can work with the pickled versions
+# pcorpus = PickledCorpusReader()
+# # print("Categories in the corpus:\n", pcorpus.categories())
+# # print("\nCN files:\n", pcorpus.fileids(categories=['CB']))
+# # print("\nA bit of one pickled text")
+# docs = list(pcorpus.docs(fileids=['CN-408|564-Bd._of_Regents_v._Roth.pickle']))
+# print(docs)
+# print('black')
+# # print(len(paras))
+# # for para in paras:
+# #     print('BREAK')
+# #     print(para)
+#
+# print(next(OpinionNormalizer().transform(docs)))
