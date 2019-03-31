@@ -8,28 +8,25 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 
 class OpinionNormalizer(BaseEstimator, TransformerMixin):
-    def __init__(self, language='english'):
-        self.stopwords = set(nltk.corpus.stopwords.words(language))
-        self.lemmatizer = WordNetLemmatizer()
+    def __init__(self):
+        self.STOPWORDS = self._load_stopwords()
+        self.LEMMATIZER = WordNetLemmatizer()
 
-    def is_punct(self, token):
+    def _load_stopwords(self):
+        return set(nltk.corpus.stopwords.words('english'))
+
+    def _is_punctuation(self, token):
         return all(
             unicodedata.category(char).startswith('P') for char in token
         )
 
-    def is_stopword(self, token):
-        return token.lower() in self.stopwords
+    def _is_stopword(self, token):
+        return token.lower() in self.STOPWORDS
 
-    def normalize(self, document):
-        return [
-            self.lemmatize(token, tag).lower()
-            for paragraph in document
-            for sentence in paragraph
-            for (token, tag) in sentence
-            if not self.is_punct(token) and not self.is_stopword(token)
-        ]
+    def _is_number(self, token):
+        return token.isdigit()
 
-    def lemmatize(self, token, pos_tag):
+    def _lemmatize(self, token, pos_tag):
         tag = {
             'N': wn.NOUN,
             'V': wn.VERB,
@@ -37,7 +34,16 @@ class OpinionNormalizer(BaseEstimator, TransformerMixin):
             'J': wn.ADJ
         }.get(pos_tag[0], wn.NOUN)
 
-        return self.lemmatizer.lemmatize(token, tag)
+        return self.LEMMATIZER.lemmatize(token, tag)
+
+    def _normalize(self, document):
+        return [
+            self._lemmatize(token, tag).lower()
+            for paragraph in document
+            for sentence in paragraph
+            for (token, tag) in sentence
+            if not self._is_punctuation(token) and not self._is_number(token) and not self._is_stopword(token)
+        ]
 
     def fit(self, X, y=None):
         return self
