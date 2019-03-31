@@ -74,7 +74,9 @@ class Preprocessor(object):
         if majority_opinion is None:
             raise LookupError
         else:
-            return majority_opinion.group()  # Take the first (only) extracted opinion
+            majority_opinion = majority_opinion.group()
+            majority_opinion = '\n'.join(majority_opinion.split('\n')[7:])  # Remove opinion header
+            return majority_opinion
 
     def _build_majority_opinion_regex(self):
         # Regex explanation:
