@@ -44,4 +44,4 @@ class OpinionNormalizer(BaseEstimator, TransformerMixin):
 
     def transform(self, documents):
         for document in documents:
-            yield self.normalize(document[0])
+            yield self._normalize(document)

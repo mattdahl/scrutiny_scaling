@@ -85,8 +85,7 @@ class CorpusLoader(object):
         return self.files[index]
 
     def documents(self, index=None):
-        for fileid in self.fileids(index):
-            yield list(self.reader.docs(fileids=[fileid]))
+        return self.reader.docs(fileids=[fileid for fileid in self.fileids(index)])
 
     def labels(self, index=None):
         labels = []
