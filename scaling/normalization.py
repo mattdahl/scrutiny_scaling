@@ -2,6 +2,9 @@
 import nltk
 import unicodedata
 
+from corpus import PickledCorpusReader
+from collections import Counter
+from itertools import chain
 from nltk.corpus import wordnet as wn
 from nltk.stem.wordnet import WordNetLemmatizer
 from sklearn.base import BaseEstimator, TransformerMixin
@@ -9,11 +12,32 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 class OpinionNormalizer(BaseEstimator, TransformerMixin):
     def __init__(self):
-        self.STOPWORDS = self._load_stopwords()
         self.LEMMATIZER = WordNetLemmatizer()
+        self.STOPWORDS = self._load_stopwords()
 
     def _load_stopwords(self):
-        return set(nltk.corpus.stopwords.words('english'))
+        stopwords = [
+            nltk.corpus.stopwords.words('english'),
+            self._generate_nm_stopwords(),
+            self._load_case_factors_stopwords()
+        ]
+        return list(set(chain.from_iterable(stopwords)))
+
+    def _generate_nm_stopwords(self):
+        nm_words = Counter(PickledCorpusReader().tokens(categories=['NM']))
+        return set([
+            self._lemmatize(element[0][0], element[0][1]).lower()
+            for element in nm_words.most_common(1000)
+        ])
+
+    def _load_case_factors_stopwords(self):
+        stopwords = []
+        case_factors_stopwords = open('/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/case_factors_stopwords.txt')
+        for line in case_factors_stopwords.readlines():
+            line = line.strip()
+            if line:
+                stopwords.append(line)
+        return set(stopwords)
 
     def _is_punctuation(self, token):
         return all(
@@ -37,13 +61,17 @@ class OpinionNormalizer(BaseEstimator, TransformerMixin):
         return self.LEMMATIZER.lemmatize(token, tag)
 
     def _normalize(self, document):
-        return [
+        lemmatized = [
             self._lemmatize(token, tag).lower()
             for paragraph in document
             for sentence in paragraph
             for (token, tag) in sentence
+        ]
+        filtered = [
+            token for token in lemmatized
             if not self._is_punctuation(token) and not self._is_number(token) and not self._is_stopword(token)
         ]
+        return filtered
 
     def fit(self, X, y=None):
         return self
