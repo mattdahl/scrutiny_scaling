@@ -29,25 +29,26 @@ class Preprocessor(object):
     def process(self):
         file_directories = [d for d in os.listdir(self.RAW_DIRECTORY) if not d.startswith('.')]
 
-        for fd in file_directories:
-            sub_directory = os.path.join(self.RAW_DIRECTORY, fd)
+        for file_directory in file_directories:
+            sub_directory = os.path.join(self.RAW_DIRECTORY, file_directory)
             file_names = [f for f in os.listdir(sub_directory) if not f.startswith('.')]
 
-            for f in file_names:
-                if f not in self.WHITELIST:
+            for i, file_name in enumerate(file_names):
+                if file_name not in self.WHITELIST:
                     # Read document
-                    file_content = open(os.path.join(sub_directory, f), 'r').read()
+                    file_content = open(os.path.join(sub_directory, file_name), 'r').read()
 
                     # Process document
                     try:
-                        majority_opinion = self._extract_majority_opinion(opinion_text=file_content)
+                        majority_opinion = self._extract_majority_opinion(file_content)
                     except LookupError:
-                        sys.exit('Error! No opinion found in file {}.'.format(f))
-                    processed_opinion = list(self._tokenize_and_tag(text=majority_opinion))
-                    new_file_name = self._rewrite_file_name(file_directory=fd, file_name=f)
+                        sys.exit('Error! No opinion found in file {}.'.format(file_name))
+                    processed_opinion = list(self._tokenize_and_tag(majority_opinion))
+                    new_file_name = self._rewrite_file_name(file_directory, file_name)
 
                     # Save processed document to disk
-                    new_file = open(os.path.join(os.getcwd(), self.PROCESSED_DIRECTORY, new_file_name), 'wb')
+                    group = 'dev' if i % 2 else 'train'
+                    new_file = open(os.path.join(os.getcwd(), self.PROCESSED_DIRECTORY, group, new_file_name), 'wb')
                     pickle.dump(processed_opinion, new_file, pickle.HIGHEST_PROTOCOL)
                     new_file.close()
                     print('Wrote {}...'.format(new_file_name))

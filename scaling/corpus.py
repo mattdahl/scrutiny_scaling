@@ -11,12 +11,12 @@ from sklearn.model_selection import KFold
 class PickledCorpusReader(CategorizedCorpusReader, CorpusReader):
     def __init__(self):
         # File directories
-        self.PROCESSED_DIRECTORY = 'data/corpus/preprocessed/'
-        self.FILEIDS = [f for f in os.listdir(self.PROCESSED_DIRECTORY) if not f.startswith('.')]
+        self.CORPUS_DIRECTORY = 'data/corpus/preprocessed/train/'
+        self.FILEIDS = [f for f in os.listdir(self.CORPUS_DIRECTORY) if not f.startswith('.')]
 
         # Super classes
         CategorizedCorpusReader.__init__(self, {'cat_map': self._make_cat_map()})
-        CorpusReader.__init__(self, root=self.PROCESSED_DIRECTORY, fileids=self.FILEIDS)
+        CorpusReader.__init__(self, root=self.CORPUS_DIRECTORY, fileids=self.FILEIDS)
 
     def _make_cat_map(self):
         category_map = {}
