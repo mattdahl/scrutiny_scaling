@@ -9,9 +9,9 @@ from sklearn.model_selection import KFold
 
 # Reader that consumes the preprocessed, pickled version of the corpus
 class PickledCorpusReader(CategorizedCorpusReader, CorpusReader):
-    def __init__(self):
+    def __init__(self, dev=False):
         # File directories
-        self.CORPUS_DIRECTORY = 'data/corpus/preprocessed/train/'
+        self.CORPUS_DIRECTORY = 'data/corpus/preprocessed/dev/' if dev else 'data/corpus/preprocessed/train/'
         self.FILEIDS = [f for f in os.listdir(self.CORPUS_DIRECTORY) if not f.startswith('.')]
 
         # Super classes
@@ -75,7 +75,7 @@ class PickledCorpusReader(CategorizedCorpusReader, CorpusReader):
 class CorpusLoader(object):
     def __init__(self, reader, folds=3, shuffle=True, categories=None):
         self.reader = reader
-        self.folds = KFold(n_splits=folds, shuffle=shuffle)
+        self.folds = None if folds == 1 else KFold(n_splits=folds, shuffle=shuffle)
         self.files = np.asarray(self.reader.fileids(categories=categories))
 
     def fileids(self, index=None):
