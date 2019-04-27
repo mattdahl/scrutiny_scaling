@@ -18,17 +18,28 @@ class OpinionNormalizer(BaseEstimator, TransformerMixin):
     def _load_stopwords(self):
         stopwords = [
             nltk.corpus.stopwords.words('english'),
-            self._load_case_factors_stopwords()
+            self._load_case_factors_stopwords(),
+            self._load_justices_stopwords()
         ]
         return list(set(chain.from_iterable(stopwords)))
 
     def _load_case_factors_stopwords(self):
         stopwords = []
-        case_factors_stopwords = open('/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/case_factors_stopwords.txt')
+        case_factors_stopwords = open('/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/stopwords/case_factors.txt')
         for line in case_factors_stopwords.readlines():
             line = line.strip()
             if line and not line.startswith('#'):
                 stopwords.append(line)
+
+        return stopwords
+
+    def _load_justices_stopwords(self):
+        stopwords = []
+        case_factors_stopwords = open('/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/stopwords/justices.txt')
+        for line in case_factors_stopwords.readlines():
+            line = line.strip()
+            if line:
+                stopwords.extend(line.split())
 
         return stopwords
 

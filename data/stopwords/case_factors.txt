@@ -3,6 +3,12 @@ commercial
 corporation
 business
 property
+tax
+subsidy
+subsidize
+money
+dollar
+lobbying
 
 # Campaign finance
 campaign
@@ -39,6 +45,7 @@ press
 newspaper
 editor
 publish
+publishing
 editorial
 
 # Public forum
@@ -50,6 +57,8 @@ street
 sidewalk
 park
 fairground
+assembly
+auditorium
 
 # Curricular speech
 school
@@ -81,6 +90,7 @@ war
 police
 policeman
 military
+panther
 
 # Speaker
 communist
@@ -96,7 +106,6 @@ employee
 employer
 labor
 union
-official
 agency
 family
 
@@ -109,7 +118,15 @@ village
 town
 city
 parish
+district
+circuit
+county
 
 # Legal
 criminal
 civil
+justice
+opinion
+majority
+plurality
+dissent
