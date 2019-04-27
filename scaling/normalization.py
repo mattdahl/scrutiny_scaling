@@ -18,26 +18,19 @@ class OpinionNormalizer(BaseEstimator, TransformerMixin):
     def _load_stopwords(self):
         stopwords = [
             nltk.corpus.stopwords.words('english'),
-            self._generate_nm_stopwords(),
             self._load_case_factors_stopwords()
         ]
         return list(set(chain.from_iterable(stopwords)))
-
-    def _generate_nm_stopwords(self):
-        nm_words = Counter(PickledCorpusReader().tokens(categories=['NM']))
-        return set([
-            self._lemmatize(element[0][0], element[0][1]).lower()
-            for element in nm_words.most_common(1000)
-        ])
 
     def _load_case_factors_stopwords(self):
         stopwords = []
         case_factors_stopwords = open('/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/case_factors_stopwords.txt')
         for line in case_factors_stopwords.readlines():
             line = line.strip()
-            if line:
+            if line and not line.startswith('#'):
                 stopwords.append(line)
-        return set(stopwords)
+
+        return stopwords
 
     def _is_punctuation(self, token):
         return all(

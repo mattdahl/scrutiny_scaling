@@ -1,0 +1,115 @@
+# Commercial speech
+commercial
+corporation
+business
+property
+
+# Campaign finance
+campaign
+finance
+donation
+expenditure
+disclosure
+candidate
+politician
+
+# Obscenity
+obscene
+movie
+film
+book
+magazine
+dancing
+nude
+bookstore
+
+# Media
+broadcast
+cablecasting
+radiolocation
+catv
+television
+tv
+media
+cable
+news
+radio
+print
+press
+newspaper
+editor
+publish
+editorial
+
+# Public forum
+public
+private
+nonpublic
+forum
+street
+sidewalk
+park
+fairground
+
+# Curricular speech
+school
+college
+university
+student
+teacher
+educator
+
+# Libel
+libel
+defamation
+defame
+
+# Religion
+religion
+church
+chapel
+worship
+worshipper
+god
+
+# Protest
+protest
+protestor
+picketing
+fighting
+war
+police
+policeman
+military
+
+# Speaker
+communist
+socialist
+marxist
+protester
+feminist
+racist
+member
+group
+worker
+employee
+employer
+labor
+union
+official
+agency
+family
+
+# Government
+federal
+state
+local
+national
+village
+town
+city
+parish
+
+# Legal
+criminal
+civil
