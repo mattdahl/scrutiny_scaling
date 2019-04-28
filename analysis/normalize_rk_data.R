@@ -5,14 +5,13 @@ library(plyr)
 library(dplyr)
 library(lme4)
 
-# Import Richards and Kritzer's database
-dataset = read_sav('data/rk_data.sav')
-mq_scores <- read_csv('/Users/mattdahl/Documents/nd/research/data/MartinQuinn_Scores_2018.csv')
+# Import Richards and Kritzer's dataset
+rk_dataset = read_sav('data/rk_data.sav')
 
-# Select only cases that present a "free press, free expression, or free speech issue"
-# Exclude the Mosley and Grayned cases themselves (MOSLEY < 3)
+# Select only cases that were actually decided on free expression grounds (FIRSTDE == 1)
+# Select only cases that occur after the Mosley/Grayned regime begins (MOSLEY == 1)
 # Remove an erroneous observation (cf. Bartels) (LED == '115/0447' & JUSTICE == 11)
-fe_data <- filter(dataset, FIRSTDE == 1, MOSLEY == 1)
+fe_data <- filter(rk_dataset, FIRSTDE == 1, MOSLEY == 1)
 fe_data <- filter(fe_data, !(LED == '115/0447' & JUSTICE == 11))
 
 # Transform VOTING values from [1, 2] to [1, 0], so now
@@ -20,16 +19,6 @@ fe_data <- filter(fe_data, !(LED == '115/0447' & JUSTICE == 11))
 # 2 = pro-government
 fe_data$VOTING <- fe_data$VOTING - 2
 fe_data$VOTING <- fe_data$VOTING * -1
-
-# Prune the Martin Quinn scores
-# Negative = liberal
-# Positive = conservative
-mq_scores <- select(mq_scores, TERM = term, JUSTICE = justice, MQ_IDEOLOGY = post_mn)
-
-# Invert the MQ_IDEOLOGY values, so now
-# Negative = conservative
-# Positive = liberal
-mq_scores$MQ_IDEOLOGY <- mq_scores$MQ_IDEOLOGY * -1
 
 # Remove all the attributes from the RK JUSTICE and TERM variables (for easy merge)
 attr(fe_data$JUSTICE, 'class') <- NULL
@@ -136,9 +125,6 @@ fe_data$MOW_N[fe_data$LED == '120/0669'] <- NA # PER CURIAM
 
 # Normalize the term ids from RK, by incrementing them all by 1900
 fe_data$TERM <- fe_data$TERM + 1900
-
-# Join the RK data with the MQ scores for each justice
-fe_data <- left_join(fe_data, mq_scores, by = c('JUSTICE_N' = 'JUSTICE', 'TERM' = 'TERM'))
 
 # Factorize the relevant variables
 fe_data$TTRACKS4 <- factor(fe_data$TTRACKS4, levels = c(2, 1, 3, 4)) # Base = content-neutral (3)
