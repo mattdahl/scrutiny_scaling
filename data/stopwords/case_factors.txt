@@ -24,13 +24,30 @@ obscene
 movie
 film
 book
+books
+store
 magazine
 dancing
 nude
 bookstore
+sexual
+sexually
+explicit
+lewd
+lewdness
+prostitution
+pornographic
+nonpornographic
+young
+youngster
+child
+children
+kid
+homosexuality
 
 # Media
 broadcast
+transmitter
 cablecasting
 radiolocation
 catv
@@ -59,6 +76,10 @@ park
 fairground
 assembly
 auditorium
+premise
+place
+heckler
+heckle
 
 # Curricular speech
 school
@@ -91,6 +112,8 @@ police
 policeman
 military
 panther
+sheriff
+officer
 
 # Speaker
 communist
@@ -108,6 +131,7 @@ labor
 union
 agency
 family
+homosexual
 
 # Government
 federal
@@ -130,3 +154,15 @@ opinion
 majority
 plurality
 dissent
+certiorari
+decide
+decided
+hold
+reverse
+reversed
+uphold
+upheld
+respondent
+appellant
+appellee
+petitioner
