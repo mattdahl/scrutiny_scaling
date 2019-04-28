@@ -14,9 +14,9 @@ rk_dataset = read_sav('data/rk_data.sav')
 fe_data <- filter(rk_dataset, FIRSTDE == 1, MOSLEY == 1)
 fe_data <- filter(fe_data, !(LED == '115/0447' & JUSTICE == 11))
 
-# Transform VOTING values from [1, 2] to [1, 0], so now
-# 1 = pro-expression
-# 2 = pro-government
+# Transform VOTING values from [1, 2] to [0, 1], so now
+# 0 = pro-government (conservative)
+# 1 = pro-expression (liberal)
 fe_data$VOTING <- fe_data$VOTING - 2
 fe_data$VOTING <- fe_data$VOTING * -1
 
@@ -27,10 +27,6 @@ attr(fe_data$JUSTICE, 'format.spss') <- NULL
 attr(fe_data$JUSTICE, 'display_width') <- NULL
 attr(fe_data$TERM, 'format.spss') <- NULL
 attr(fe_data$TERM, 'display_width') <- NULL
-
-# Coerce the MQ justice and term variables to doubles
-mq_scores$JUSTICE <- as.numeric(mq_scores$JUSTICE)
-mq_scores$TERM <- as.numeric(mq_scores$TERM)
 
 # Normalize the justice ids from RK (since RK used some weird system...)
 fe_data$JUSTICE_N <- NA
@@ -133,6 +129,7 @@ fe_data$GOVERN <- factor(fe_data$GOVERN, levels = c(5, 0, 1, 2, 3, 4)) # Base = 
 fe_data$ACTION <- factor(fe_data$ACTION, levels = c(2, 1, 3, 4, 5, 6, 7)) # Base = civil (2)
 fe_data$TERM <- factor(fe_data$TERM)
 fe_data$LED <- factor(fe_data$LED)
+fe_data$MOW_N <- factor(fe_data$MOW_N)
 
 # Save the normalized data
 saveRDS(fe_data, file = 'data/normalized_fe_data.rds')

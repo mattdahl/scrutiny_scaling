@@ -2,7 +2,7 @@
 library(dplyr)
 
 ## Data
-fe_data = readRDS('data/free_expression_data.rds')
+fe_data = readRDS('data/normalized_fe_data.rds')
 
 ## Functions
 # Gets unique citations from dataframe

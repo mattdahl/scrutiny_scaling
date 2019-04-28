@@ -1,5 +1,11 @@
+# Libs
+library("MASS")
+
 # Import data
 fe_data <- readRDS('data/joined_fe_data.rds')
+
+# Filter to only scored documents
+fe_data <- subset(fe_data, !(is.na(scrutiny_score) | is.na(majority_author)))
 
 # Regression model
 base_formula <- c(
@@ -10,7 +16,18 @@ base_formula <- c(
   'ideology'
 )
 
-model = lm(
+model <- lm(
   paste('scrutiny_score ~', paste(base_formula, collapse = '+')),
+  data = fe_data
+)
+
+model2 <- lm(
+  scrutiny_score ~ ideology,
+  data = fe_data
+)
+
+# Robust rlm
+model3 <- rlm(
+  scrutiny_score ~ ideology,
   data = fe_data
 )
