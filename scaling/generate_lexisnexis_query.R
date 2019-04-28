@@ -28,14 +28,11 @@ create_query_string = function (citation_strings) {
 }
 
 ## Script
-# Restrict to post-Grayned cases
-fe_data_after_grayned = filter(fe_data, MOSLEY == 1)
-
 # Partition by content category
-cb_data = filter(fe_data_after_grayned, TTRACKS4 == 1)  # Content-based
-cn_data = filter(fe_data_after_grayned, TTRACKS4 == 2)  # Content-neutral
-lp_data = filter(fe_data_after_grayned, TTRACKS4 == 3)  # Less-protected
-nm_data = filter(fe_data_after_grayned, TTRACKS4 == 4)  # Threshold not met
+cb_data = filter(fe_data, TTRACKS4 == 1)  # Content-based
+cn_data = filter(fe_data, TTRACKS4 == 2)  # Content-neutral
+lp_data = filter(fe_data, TTRACKS4 == 3)  # Less-protected
+nm_data = filter(fe_data, TTRACKS4 == 4)  # Threshold not met
 
 # Get citation strings, rewrite them, and transform them into LexisNexis query strings
 cb_query_string = create_query_string(rewrite_citations(get_citations(cb_data)))

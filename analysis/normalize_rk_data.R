@@ -135,4 +135,4 @@ fe_data$TERM <- factor(fe_data$TERM)
 fe_data$LED <- factor(fe_data$LED)
 
 # Save the normalized data
-saveRDS(fe_data, file = 'data/free_expression_data.rds')
+saveRDS(fe_data, file = 'data/normalized_fe_data.rds')
