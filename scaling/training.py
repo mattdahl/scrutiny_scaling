@@ -19,7 +19,7 @@ from sklearn.decomposition import TruncatedSVD, PCA
 
 class ModelTrainer(object):
     def __init__(self):
-        self.MODEL_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/models'
+        self.MODEL_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/scaling/models'
         self.categories = ['LP', 'CN', 'CB']
         self.corpus_reader = PickledCorpusReader(dev=False)
         self.corpus_loader = CorpusLoader(self.corpus_reader, 8, shuffle=True, categories=self.categories)

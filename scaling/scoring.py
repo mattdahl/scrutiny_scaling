@@ -5,12 +5,13 @@ import os
 import csv
 import dill as pickle
 import numpy as np
+from scipy import stats
 
 
 class Scorer(object):
     def __init__(self):
-        self.MODEL_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/models'
-        self.SCORES_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/scores'
+        self.MODEL_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/scaling/models'
+        self.SCORES_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/scores'
         self.pipeline = self._load_pipeline()
         self.categories = ['CB', 'CN', 'LP']
         self.corpus_loader = CorpusLoader(PickledCorpusReader(dev=True), 1, shuffle=False, categories=self.categories)
@@ -21,12 +22,14 @@ class Scorer(object):
             return pickle.load(file)
 
     def save(self):
-        X_dev_ids = self.corpus_loader.fileids()
+        X_dev_fileids = self.corpus_loader.fileids()
+        citations = [fileid.split('-')[1] for fileid in X_dev_fileids]
 
         with open(os.path.join(self.SCORES_DIRECTORY, self.MODEL_NAME + '.csv'), 'w') as file:
             writer = csv.writer(file, delimiter=',')
+            writer.writerow(['fileid', 'citation', 'scrutiny_score'])
             for i, score in enumerate(self.scores):
-                writer.writerow([X_dev_ids[i], score])
+                writer.writerow([X_dev_fileids[i], citations[i], score])
 
 
 class ClassificationScorer(Scorer):
@@ -38,7 +41,10 @@ class ClassificationScorer(Scorer):
         X_dev = self.corpus_loader.documents()
         y_hat_probabilities = np.array(self.pipeline.predict_proba(X_dev))
         score_weights = np.array([3, 2, 1])  # CB, CN, LP
-        self.scores = y_hat_probabilities.dot(score_weights)
+        dot_product = y_hat_probabilities.dot(score_weights)
+        standardized = stats.zscore(dot_product)
+
+        self.scores = standardized
 
 
 class RegressionScorer(Scorer):
@@ -49,4 +55,6 @@ class RegressionScorer(Scorer):
     def score(self):
         X_dev = self.corpus_loader.documents()
         y_hat = self.pipeline.predict(X_dev)
-        self.scores = y_hat
+        standardized = stats.zscore(y_hat)
+
+        self.scores = standardized
