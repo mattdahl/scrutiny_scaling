@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import nltk
 import unicodedata
+import re
 
 from corpus import PickledCorpusReader
 from collections import Counter
@@ -14,6 +15,7 @@ class OpinionNormalizer(BaseEstimator, TransformerMixin):
     def __init__(self):
         self.LEMMATIZER = WordNetLemmatizer()
         self.STOPWORDS = self._load_stopwords()
+        self.ROMAN_NUMERAL_REGEX = re.compile('^M{0,4}(CM|CD|D?C{0,3})(XC|XL|L?X{0,3})(IX|IV|V?I{0,3})$', re.IGNORECASE)
 
     def _load_stopwords(self):
         stopwords = [
@@ -52,7 +54,10 @@ class OpinionNormalizer(BaseEstimator, TransformerMixin):
         return token.lower() in self.STOPWORDS
 
     def _is_number(self, token):
-        return token.isdigit()
+        return token.isdigit() or any(char.isdigit() for char in token) or re.match(self.ROMAN_NUMERAL_REGEX, token)
+
+    def _is_proper_noun(self, tag):
+        return tag == 'NNP' or tag == 'NNPS'
 
     def _lemmatize(self, token, pos_tag):
         tag = {
@@ -69,7 +74,7 @@ class OpinionNormalizer(BaseEstimator, TransformerMixin):
             self._lemmatize(token, tag).lower()
             for paragraph in document
             for sentence in paragraph
-            for (token, tag) in sentence
+            for (token, tag) in sentence if not self._is_proper_noun(tag)
         ]
         filtered = [
             token for token in lemmatized
