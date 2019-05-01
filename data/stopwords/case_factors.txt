@@ -9,6 +9,8 @@ subsidize
 money
 dollar
 lobbying
+patron
+proprietor
 
 # Campaign finance
 campaign
@@ -19,7 +21,7 @@ disclosure
 candidate
 politician
 
-# Obscenity
+# Obscenity and pornography
 obscene
 movie
 film
@@ -38,12 +40,20 @@ lewdness
 prostitution
 pornographic
 nonpornographic
+pornography
+porn
 young
 youngster
 child
 children
 kid
 homosexuality
+masturbation
+fondling
+fellatio
+erection
+lust
+kiss
 
 # Media
 broadcast
@@ -64,6 +74,12 @@ editor
 publish
 publishing
 editorial
+audio
+video
+listserv
+listservs
+newsgroup
+newsgroups
 
 # Public forum
 public
@@ -72,14 +88,24 @@ nonpublic
 forum
 street
 sidewalk
+soapbox
 park
 fairground
+booth
+storefront
 assembly
 auditorium
 premise
 place
 heckler
 heckle
+crier
+prison
+jail
+cell
+online
+internet
+web
 
 # Curricular speech
 school
@@ -116,9 +142,16 @@ sheriff
 officer
 
 # Speaker
+man
+woman
+men
+women
+boy
+girl
 communist
 socialist
 marxist
+nationalist
 protester
 feminist
 racist
@@ -132,6 +165,10 @@ union
 agency
 family
 homosexual
+adult
+prisoner
+inmate
+detainee
 
 # Government
 federal
@@ -162,7 +199,23 @@ reverse
 reversed
 uphold
 upheld
+grant
+bar
+decide
+decided
 respondent
+respondents
 appellant
 appellee
 petitioner
+solicitor
+solicit
+solicitation
+attorney
+lawyer
+witness
+sue
+suit
+
+# Maybe
+establishment
