@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from normalization import OpinionNormalizer
+from normalization import OpinionNormalizer, ToArray
 from corpus import PickledCorpusReader, CorpusLoader
 
 import os
@@ -36,6 +36,7 @@ class ModelTrainer(object):
                     preprocessor=None,
                     lowercase=False
                 )),
+                #('to_array', ToArray()),
                 #('reduce', TruncatedSVD(n_components=1000)),
                 ('classify', classifier)
             ])

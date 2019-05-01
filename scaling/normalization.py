@@ -88,3 +88,11 @@ class OpinionNormalizer(BaseEstimator, TransformerMixin):
     def transform(self, documents):
         for document in documents:
             yield self._normalize(document)
+
+
+class ToArray(BaseEstimator, TransformerMixin):
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, documents):
+        return documents.toarray()
