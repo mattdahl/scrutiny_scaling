@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from settings import CORPUS_DIRECTORY_DEV, CORPUS_DIRECTORY_TRAIN
+
 import os
 import pickle
 import numpy as np
@@ -11,7 +13,7 @@ from sklearn.model_selection import KFold
 class PickledCorpusReader(CategorizedCorpusReader, CorpusReader):
     def __init__(self, dev=False):
         # File directories
-        self.CORPUS_DIRECTORY = 'data/corpus/preprocessed/dev/' if dev else 'data/corpus/preprocessed/train/'
+        self.CORPUS_DIRECTORY = CORPUS_DIRECTORY_DEV if dev else CORPUS_DIRECTORY_TRAIN
         self.FILEIDS = [f for f in os.listdir(self.CORPUS_DIRECTORY) if not f.startswith('.')]
 
         # Super classes

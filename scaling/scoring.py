@@ -1,40 +1,42 @@
 #!/usr/bin/env python3
 from corpus import PickledCorpusReader, CorpusLoader
+from settings import MODELS_DIRECTORY, SCORES_DIRECTORY
 
 import os
 import csv
 import dill as pickle
 import numpy as np
+
 from scipy import stats
 
 
 class Scorer(object):
     def __init__(self):
-        self.MODEL_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/scaling/models'
-        self.SCORES_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/scores'
         self.pipeline = self._load_pipeline()
         self.categories = ['CB', 'CN', 'LP']
         self.corpus_loader = CorpusLoader(PickledCorpusReader(dev=True), 1, shuffle=False, categories=self.categories)
         self.scores = []
 
     def _load_pipeline(self):
-        with open(os.path.join(self.MODEL_DIRECTORY, self.MODEL_NAME + '.pickle'), 'rb') as file:
+        with open(os.path.join(MODELS_DIRECTORY, self.model_name + '.pickle'), 'rb') as file:
             return pickle.load(file)
 
     def save(self):
         X_dev_fileids = self.corpus_loader.fileids()
         citations = [fileid.split('-')[1] for fileid in X_dev_fileids]
 
-        with open(os.path.join(self.SCORES_DIRECTORY, self.MODEL_NAME + '.csv'), 'w') as file:
+        y_dev = self._map_scores(self.corpus_loader.labels())
+
+        with open(os.path.join(SCORES_DIRECTORY, self.model_name + '.csv'), 'w') as file:
             writer = csv.writer(file, delimiter=',')
-            writer.writerow(['fileid', 'citation', 'scrutiny_score'])
+            writer.writerow(['fileid', 'citation', 'y_dev', 'scrutiny_score'])
             for i, score in enumerate(self.scores):
-                writer.writerow([X_dev_fileids[i], citations[i], score])
+                writer.writerow([X_dev_fileids[i], citations[i], y_dev[i], score])
 
 
 class ClassificationScorer(Scorer):
     def __init__(self, model_name):
-        self.MODEL_NAME = model_name
+        self.model_name = model_name
         super().__init__()
 
     def score(self):
@@ -49,7 +51,7 @@ class ClassificationScorer(Scorer):
 
 class RegressionScorer(Scorer):
     def __init__(self, model_name):
-        self.MODEL_NAME = model_name
+        self.model_name = model_name
         super().__init__()
 
     def score(self):

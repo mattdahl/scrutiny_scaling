@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
+from settings import STOPWORDS_FILE_CASE_FACTORS, STOPWORDS_FILE_JUSTICES
+
 import nltk
 import unicodedata
 import re
-
-from corpus import PickledCorpusReader
-from collections import Counter
 from itertools import chain
+
 from nltk.corpus import wordnet as wn
 from nltk.stem.wordnet import WordNetLemmatizer
 from sklearn.base import BaseEstimator, TransformerMixin
@@ -27,7 +27,7 @@ class OpinionNormalizer(BaseEstimator, TransformerMixin):
 
     def _load_case_factors_stopwords(self):
         stopwords = []
-        case_factors_stopwords = open('/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/stopwords/case_factors.txt')
+        case_factors_stopwords = open(STOPWORDS_FILE_CASE_FACTORS)
         for line in case_factors_stopwords.readlines():
             line = line.strip()
             if line and not line.startswith('#'):
@@ -37,7 +37,7 @@ class OpinionNormalizer(BaseEstimator, TransformerMixin):
 
     def _load_justices_stopwords(self):
         stopwords = []
-        case_factors_stopwords = open('/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/stopwords/justices.txt')
+        case_factors_stopwords = open(STOPWORDS_FILE_JUSTICES)
         for line in case_factors_stopwords.readlines():
             line = line.strip()
             if line:

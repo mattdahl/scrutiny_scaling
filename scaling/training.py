@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 from normalization import OpinionNormalizer, ToArray
 from corpus import PickledCorpusReader, CorpusLoader
+from settings import MODELS_DIRECTORY
 
 import os
 import time
 import tabulate
 import dill as pickle
-from collections import defaultdict
 import numpy as np
+from collections import defaultdict
+
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, r2_score, explained_variance_score, mean_squared_error
@@ -19,7 +21,6 @@ from sklearn.decomposition import TruncatedSVD, PCA
 
 class ModelTrainer(object):
     def __init__(self):
-        self.MODEL_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/scaling/models'
         self.categories = ['LP', 'CN', 'CB']
         self.corpus_reader = PickledCorpusReader(dev=False)
         self.corpus_loader = CorpusLoader(self.corpus_reader, 8, shuffle=True, categories=self.categories)
@@ -47,7 +48,7 @@ class ModelTrainer(object):
     def save(self):
         for pipeline in self.pipelines:
             file_name = pipeline.named_steps['classify'].__class__.__name__ + '-' + str(time.time()) + '.pickle'
-            file = open(os.path.join(self.MODEL_DIRECTORY, file_name), 'wb')
+            file = open(os.path.join(MODELS_DIRECTORY, file_name), 'wb')
             pickle.dump(pipeline, file)
             file.close()
 

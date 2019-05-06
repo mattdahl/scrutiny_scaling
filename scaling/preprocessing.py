@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+from settings import CORPUS_DIRECTORY_RAW, CORPUS_DIRECTORY_DEV, CORPUS_DIRECTORY_TRAIN
+
 import os
 import pickle
 import re
@@ -13,8 +15,7 @@ from nltk import pos_tag, sent_tokenize, wordpunct_tokenize
 class Preprocessor(object):
     def __init__(self):
         # File directories
-        self.RAW_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/corpus/raw'
-        self.PROCESSED_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/data/corpus/preprocessed'
+        self.RAW_DIRECTORY = CORPUS_DIRECTORY_RAW
 
         # Regexes
         self.FILE_NAME_REGEX = re.compile(r'(.+)(?=(\d{3}) U\.S\. (\d+)(\.txt))')
@@ -47,8 +48,8 @@ class Preprocessor(object):
                     new_file_name = self._rewrite_file_name(file_directory, file_name)
 
                     # Save processed document to disk
-                    group = 'dev' if i % 2 else 'train'
-                    new_file = open(os.path.join(os.getcwd(), self.PROCESSED_DIRECTORY, group, new_file_name), 'wb')
+                    new_directory = CORPUS_DIRECTORY_DEV if i % 2 else CORPUS_DIRECTORY_TRAIN
+                    new_file = open(os.path.join(new_directory, new_file_name), 'wb')
                     pickle.dump(processed_opinion, new_file, pickle.HIGHEST_PROTOCOL)
                     new_file.close()
                     print('Wrote {}...'.format(new_file_name))
