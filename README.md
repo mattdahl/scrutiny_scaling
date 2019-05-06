@@ -1,6 +1,9 @@
+# About
+How does the language of legal doctrine shape judicial opinion-writing? This code provides a framework for training NLP models to generate a unidimensional "scrutiny scale" (i.e., scaling along the different levels of the tiers-of-scrutiny doctrine). It then scores free expression opinions along that scale and performs some initial hypothesis testing regarding the relationship between scrutiny and judicial ideology. See below for specific replication steps.
+
 # Replication
 ## Corpus acquisition and preprocessing
-1. Opinion files are obtained from LexisNexis. Run this `R` script to generate query strings, manually feed those query strings into the LexisNexis interface (no API access), and finally download the returned documents as zipped `.rtf` files.
+1. Opinion files are obtained from LexisNexis. Run this `R` script to generate well-formed search queries, manually feed those queries into the LexisNexis interface (no API access), and finally download the returned documents as zipped `.rtf` files.
 	
 	```
 	Rscript scaling/generate_lexisnexis_query.R
@@ -53,16 +56,16 @@ Broadly, two different species of models can be trained: Classification models a
 	
 	from training import ClassificationModelTrainer
 
-	model_trainer = ClassificationModelTrainer()
+	model_trainer = ClassificationModelTrainer(MODEL_NAME) # e.g., ClassificationScorer('LinearSVC-1557173364.336978')
 	model_trainer.train()
 	```
 
 2. To train a regression model:
-3. 
+
 	```	
 	from training import RegressionModelTrainer
 
-	model_trainer = RegressionModelTrainer()
+	model_trainer = RegressionModelTrainer(MODEL_NAME)
 	model_trainer.train()
 	```
 
@@ -107,7 +110,7 @@ Score generation follows a similar process. Because scores are generated differe
 	```
 
 ## Hypothesis testing
-1. With scrutiny scores in hand, it is now possible to do meaningful hypothesis testing. First, make sure the data from Richards and Kritzer has been properly normalized:
+1. With the scrutiny scores in hand, it is now possible to do meaningful hypothesis testing. First, make sure the data from Richards and Kritzer has been properly normalized:
 
 	```
 	Rscript analysis/normalize_rk_data.R
