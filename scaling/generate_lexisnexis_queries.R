@@ -41,3 +41,14 @@ lp_query_string = create_query_string(rewrite_citations(get_citations(lp_data)))
 nm_query_string = create_query_string(rewrite_citations(get_citations(nm_data)))
 
 # Feed these queries manually into LexisNexis (no API access)
+print('Content-based cases:')
+print(cb_query_string)
+
+print('Content-neutral cases:')
+print(cn_query_string)
+
+print('Less-protected cases:')
+print(lp_query_string)
+
+print('Not-met cases:')
+print(nm_query_string)

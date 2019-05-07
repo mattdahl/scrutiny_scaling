@@ -9,9 +9,10 @@ import sys
 from nltk import pos_tag, sent_tokenize, wordpunct_tokenize
 
 
-# Takes raw LexisNexis .txt files; tokenizes them into paragraphs, sentences,
-# and words; tags them with part of speech tags; and saves them in a pickled
-# format for future consumption.
+# Takes raw LexisNexis .txt files; extracts the majority opinion from each
+# document; tokenizes it into paragraphs, sentences, and words; tags each word
+# with its part of speech tag; and saves it in a pickled format for future
+# consumption.
 class Preprocessor(object):
     def __init__(self):
         # File directories

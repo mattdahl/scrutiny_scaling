@@ -6,7 +6,7 @@ How does the language of legal doctrine shape judicial opinion-writing? This cod
 1. Opinion files are obtained from LexisNexis. Run this `R` script to generate well-formed search queries, manually feed those queries into the LexisNexis interface (no API access), and finally download the returned documents as zipped `.rtf` files.
 	
 	```
-	Rscript scaling/generate_lexisnexis_query.R
+	Rscript scaling/generate_lexisnexis_queries.R
 	```
 
 2. Place the raw `.rtf` files in the `/data/corpus/raw/` subdirectories as follows:
@@ -29,14 +29,14 @@ How does the language of legal doctrine shape judicial opinion-writing? This cod
 	rm *.rtf
 	```
 
-4. Remove the following duplicate opinions manually (for some reason LexisNexis sometimes returns concurring/dissenting opinions separately)
+4. Remove the following duplicate opinions manually (for some reason LexisNexis sometimes returns concurring/dissenting opinions separately).
 
 	```
 	Int'l Soc'y for Krishna Consciousness v. Lee, 505 U.S. 672(2).txt
 	Bd. of County Comm'rs v. Umbehr, 518 U.S. 668.txt
 	```
 
-5. Pre-process the corpus.
+5. Pre-process the corpus. (Extract the majority opinion from each `.txt` file; tokenize it into paragraphs, sentences, and words; tag each word with its part of speech tag; and save the opinion as a `.pickle` file for future consumption.)
 
 	```
 	python3
@@ -56,7 +56,7 @@ Broadly, two different species of models can be trained: Classification models a
 	
 	from training import ClassificationModelTrainer
 
-	model_trainer = ClassificationModelTrainer(MODEL_NAME) # e.g., ClassificationScorer('LinearSVC-1557173364.336978')
+	model_trainer = ClassificationModelTrainer()
 	model_trainer.train()
 	```
 
@@ -65,7 +65,7 @@ Broadly, two different species of models can be trained: Classification models a
 	```	
 	from training import RegressionModelTrainer
 
-	model_trainer = RegressionModelTrainer(MODEL_NAME)
+	model_trainer = RegressionModelTrainer()
 	model_trainer.train()
 	```
 
@@ -90,7 +90,7 @@ Score generation follows a similar process. Because scores are generated differe
 	
 	from scoring import ClassificationScorer
 	
-	s = ClassificationScorer()
+	s = ClassificationScorer(MODEL_NAME) # e.g., ClassificationScorer('LinearSVC-1557173364.336978')
 	s.score()
 	```
 
@@ -99,7 +99,7 @@ Score generation follows a similar process. Because scores are generated differe
 	```	
 	from scoring import RegressionScorer
 	
-	s = RegressionScorer()
+	s = RegressionScorer(MODEL_NAME)
 	s.score()
 	```
 
