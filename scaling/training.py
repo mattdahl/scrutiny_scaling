@@ -17,6 +17,8 @@ from sklearn.linear_model import LogisticRegression, SGDClassifier, Lasso, Elast
 from sklearn.naive_bayes import MultinomialNB, GaussianNB, BernoulliNB, ComplementNB
 from sklearn.svm import LinearSVC, SVC, SVR
 from sklearn.decomposition import TruncatedSVD, PCA
+from sklearn.model_selection import GridSearchCV
+import pandas as pd
 
 
 class ModelTrainer(object):
@@ -72,6 +74,21 @@ class ClassificationModelTrainer(ModelTrainer):
             X_train = self.corpus_reader.docs(categories=self.categories)
             y_train = [self.corpus_reader.categories(fileids=[fileid])[0] for fileid in self.corpus_reader.fileids(categories=self.categories)]
             pipeline.fit(X_train, y_train)
+
+    def gridsearch(self):
+        for pipeline in self.pipelines:
+            search = GridSearchCV(
+                pipeline,
+                param_grid={
+                    'vectorize__ngram_range': [(1, 1), (1, 2), (1, 3), (2, 3)],
+                    'reduce__n_components': [10, 100, 500, 1000, 5000, 9000]},
+                cv=3,
+                return_train_score=False
+            )
+            X_train = list(self.corpus_reader.docs(categories=self.categories))
+            y_train = [self.corpus_reader.categories(fileids=[fileid])[0] for fileid in self.corpus_reader.fileids(categories=self.categories)]
+            search.fit(X_train, y_train)
+            print(pd.DataFrame(search.cv_results_))
 
     def validate(self):
         fields = ['model', 'precision', 'recall', 'accuracy', 'f1']
