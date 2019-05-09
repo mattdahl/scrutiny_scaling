@@ -6,7 +6,7 @@ library(dplyr)
 
 # Import data
 fe_data <- readRDS('data/normalized_fe_data.rds')
-scrutiny_scores <- read_csv('data/scores/Ridge-1556386491.6430879.csv')
+scrutiny_scores <- read_csv('data/scores/Ridge-1557373194.313121.csv')
 mq_scores <- read_csv('/Users/mattdahl/Documents/nd/research/data/MartinQuinn_Scores_2018.csv')
 
 # Prune the fe_data
@@ -50,6 +50,7 @@ mq_scores$term <- factor(as.numeric(mq_scores$term))
 scrutiny_scores <- dplyr::select(scrutiny_scores,
   citation = citation,
   scrutiny_score = scrutiny_score
+  y_dev = y_dev
 )
 
 # Consolidate data (before, each row represents a vote; after, each row represents an opinion)

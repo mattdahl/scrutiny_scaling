@@ -31,3 +31,8 @@ model3 <- rlm(
   scrutiny_score ~ ideology,
   data = fe_data
 )
+
+model4 <- lm(
+  y_dev ~ ideology,
+  data = fe_data
+)
