@@ -1,0 +1,57 @@
+
+  CautionAs of: October 19, 2019 10:43 PM Z
+Robinson v. Florida
+Supreme Court of the United States
+October 15, 1963, Argued ; June 22, 1964, Decided 
+No. 60
+
+Reporter
+378 U.S. 153 *; 84 S. Ct. 1693 **; 12 L. Ed. 2d 771 ***; 1964 U.S. LEXIS 821 ****
+ROBINSON ET AL. v. FLORIDA
+Prior History:  [****1]  APPEAL FROM THE SUPREME COURT OF FLORIDA.  
+Disposition:  144 So. 2d 811, reversed.  
+Syllabus
+
+
+
+
+ Following refusal by appellants, Negroes and whites, to leave a Miami, Florida, restaurant, they were arrested and convicted under a state misdemeanor statute proscribing a guest's remaining at a restaurant after having been asked to leave by the management.  The State Supreme Court affirmed, holding the statute did not deny equal protection of the laws.  At the time of the arrest a State Health Board regulation applicable to restaurants and adopted under the legislature's authority required segregated rest rooms and the State had issued a manual based on state regulations requiring segregated facilities.  Held: The regulations embodying a state policy which discouraged serving the two races together, involved the State so significantly in causing restaurant segregation as to violate the Equal Protection Clause of the Fourteenth Amendment. Peterson v. City of Greenville, 373 U.S. 244, followed.  Pp. 153-157.  
+Counsel: Alfred I. Hopkins and Jack Greenberg argued the cause for appellants.  With Mr. Hopkins on the briefs were Tobias Simon and Howard W. Dixon.
+George R. Georgieff,  [****2]  Assistant Attorney General of Florida, argued the cause for appellee.  With him on the briefs were Richard W. Ervin, former Attorney General of Florida, and James W. Kynes, Attorney General of Florida.
+Ralph S. Spritzer, by special leave of Court, argued the cause for the United States, as amicus curiae, urging reversal.  With him on the briefs were Solicitor General Cox, Assistant Attorney General Marshall, Louis F. Claiborne, Harold H. Greene, Howard A. Glickstein and David Rubin.  
+Judges: Warren, Black, Douglas, Clark, Harlan, Brennan, Stewart, White, Goldberg 
+Opinion by: BLACK 
+Opinion
+
+
+
+
+ [*153]   [***772]   [**1694]  MR. JUSTICE BLACK delivered the opinion of the Court.
+A criminal information filed in a Florida state court charged that these eighteen appellants had violated  [*154]  § 509.141 of the Florida Statutes by remaining in a restaurant after the manager had requested them to leave. 1  The material facts are not in dispute and show: Shell's City Restaurant, which is one of nineteen departments in Shell's Department Store in Miami, had, at the time of appellants' arrest, a policy of refusing to serve Negroes.  Appellants, Negroes and whites, went as a group into the restaurant and seated themselves  [****3]  at tables.  In accordance with the restaurant's policy, the manager told appellants they would not be served.  The manager called the police and, accompanied by one policeman, went to each table, again told appellants they would not be served, and requested them to leave.  They refused.  The police officers then advised them to leave, and when appellants persisted in their refusal the police placed them all under arrest.
+ [1]At the trial, the [****4]  Shell's City management explained that, while Negroes were welcomed as customers in the store's other departments, serving Negroes in the restaurant would be "very detrimental to our business" because of the objections of white customers. After these facts had been brought out during the examination of the State's witnesses, appellants moved for a directed verdict on the ground that their arrest, prosecution, and conviction by the State on this evidence would amount to state discrimination against them on account of color, thereby violating the Fourteenth Amendment's guarantee of equal protection of the laws.  This motion was denied.  The  [*155]  appellants calling no witnesses, the trial court stayed the adjudication of guilt and the imposition of sentence and placed appellants on probation, as authorized by § 948.01 (3) of the Florida Statutes. On appeal, after various jurisdictional rulings in the  [***773]  Florida appellate courts, 2  the Supreme Court of Florida affirmed, holding the statute under which appellants were convicted to be nondiscriminatory.   144 So. 2d 811. The case is properly here on appeal under 28 U. S. C. § 1257 (2), and we noted probable [****5]  jurisdiction.   374 U.S. 803.
+In this case we do not reach the broad question whether the Fourteenth Amendment of its own force forbids a State to arrest and prosecute those who, having been asked to leave a restaurant because of their color, refuse to do so.  For here there are additional circumstances which,  [**1695]  we think, call for reversal because of our holding in  Peterson v. City of Greenville, 373 U.S. 244. The petitioners in Peterson were convicted of trespass in violation of a city ordinance after they had seated themselves at a lunch counter and remained there over the manager's protest.  At that time, however, there existed another Greenville ordinance which made it unlawful for restaurants to serve meals to white persons and colored persons in the same room or at the same table or counter.  In Peterson the city argued  [****6]  that the manager's refusal to serve Negroes was based on his own personal preference, which did not amount to "state action" forbidden by the Fourteenth Amendment. But we held that the case must be decided on the basis of what the ordinance required people to do, not on the basis of what the manager wanted to do.  We said:
+
+
+"When a state agency passes a law compelling persons to discriminate against other persons because of race, and the State's criminal processes are employed  [*156]  in a way which enforces the discrimination mandated by that law, such a palpable violation of the Fourteenth Amendment cannot be saved by attempting to separate the mental urges of the discriminators."  373 U.S., at 248.
+
+See also  Lombard v. Louisiana, 373 U.S. 267.
+In the present case, when appellants were arrested and tried the Florida Board of Health had in effect a regulation, adopted under "authority of the Florida Legislature" and applicable to restaurants, which provided that "where colored persons are employed or accommodated" separate toilet and lavatory rooms must be provided. 3  A month before petitioners were arrested, the State of Florida had [****7]  issued a "Food and Drink Services" manual, based on state regulations. The manual said that as a "basic requirement,"
+
+
+"Separate facilities shall be provided for each sex and for each race whether employed or served in the establishment."
+
+ [2][3]While these Florida regulations do not directly and expressly forbid restaurants to serve both white and colored people together, they certainly embody a state policy putting burdens upon any restaurant which serves both races, burdens bound to discourage the serving of the two races together.  Of course, state action, of the kind that falls within the proscription of the Equal Protection Clause of the Fourteenth Amendment, may be brought  [***774]  about through the State's administrative and regulatory agencies just as through its legislature.  Cf.   Lombard v. Louisiana, supra, 373 U.S., at 273. Here as in  Peterson v. City of Greenville, supra, we conclude that the State through its regulations has become involved to such a  [*157]  significant extent in bringing about restaurant segregation that appellants' trespass convictions must be held to reflect that state policy and therefore to violate [****8]  the Fourteenth Amendment.
+The judgment of the Supreme Court of Florida is reversed and the case is remanded for further proceedings not inconsistent with this opinion.
+It is so ordered.
+MR. JUSTICE DOUGLAS would reverse the judgment below for the reasons stated in his opinion in No. 12, Bell v. Maryland, post, p. 242.
+MR. JUSTICE HARLAN, considering himself bound by  Peterson v. City of Greenville, 373 U.S. 244, acquiesces in the judgment of the Court.   
+References
+
+
+
+Annotation References:
+Race discrimination. 94 L ed 1121, 96 L ed 1291, 98 L ed 882, 100 L ed 488, 3 L ed 2d 1556, 6 L ed 2d 1302, 10 L ed 2d 1105. See also 38 ALR2d 1188.  
+
+ 
+
+End of Document

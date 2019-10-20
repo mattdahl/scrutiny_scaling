@@ -3,6 +3,7 @@ import os
 
 # Base file paths
 BASE_DIRECTORY = '/Users/mattdahl/Documents/nd/research/projects/scrutiny_scaling/'
+SCDB_DATA_FILE = '/Users/mattdahl/Documents/nd/research/data/SCDB_2019_01_caseCentered_Citation.csv'
 
 # Corpus
 CORPUS_DIRECTORY_RAW = os.path.join(BASE_DIRECTORY, 'data/corpus/raw')

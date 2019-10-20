@@ -1,0 +1,81 @@
+
+Ocala Star-Banner Co. v. Damron
+Supreme Court of the United States
+December 17, 1970, Argued ; February 24, 1971, Decided 
+No. 118
+
+Reporter
+401 U.S. 295 *; 91 S. Ct. 628 **; 28 L. Ed. 2d 57 ***; 1971 U.S. LEXIS 79 ****; 1 Media L. Rep. 1624
+OCALA STAR-BANNER CO. ET AL. v. DAMRON
+Prior History:  [****1]  CERTIORARI TO THE DISTRICT COURT OF APPEAL OF FLORIDA, FIRST DISTRICT.  
+Disposition:  221 So. 2d 459, reversed and remanded.  
+Syllabus
+
+
+
+
+ Petitioner newspaper published a false story that respondent, then a mayor and a candidate for county tax assessor, had been charged with perjury in federal court, and respondent sued for libel. The judge instructed the jury that the charge was libelous per se and that respondent could recover damages without showing malice. The jury awarded compensatory damages. The judge denied the newspaper's motion for a new trial on the basis of the "actual malice" test of New York Times Co. v. Sullivan, 376 U.S. 254, on the ground that the article did not refer to respondent's official conduct.  The Florida District Court of Appeal affirmed, holding that the New York Times rule did not apply.  Held: A charge of criminal conduct against a public official or a candidate for public office, no matter how remote in time or place, is always "relevant to his fitness for office" for purposes of applying the New York Times rule of knowing falsehood or reckless disregard of the truth.  Monitor Patriot Co. v. Roy, ante, p. 265.  Pp.  [****2]  299-301.  
+Counsel: Harold B. Wahl argued the cause and filed briefs for petitioners.
+Wallace Dunn argued the cause and filed a brief for respondent.  
+Judges: Stewart, J., delivered the opinion of the Court, in which Burger, C. J., and Harlan, Brennan, White, Marshall, and Blackmun, JJ., joined.  White, J., filed a concurring opinion, post, p. 301.  Black, J., filed an opinion concurring in the judgment and dissenting in part, in which Douglas, J., joined, ante, p. 277.  
+Opinion by: STEWART 
+Opinion
+
+
+
+
+ [*295]   [***59]   [**629]  MR. JUSTICE STEWART delivered the opinion of the Court.
+The Ocala Star-Banner Co., a petitioner in this case, publishes a small daily newspaper serving four counties in rural Florida.  On April 18, 1966, the Star-Banner  [*296]  printed a story to the effect that the respondent, Leonard Damron, then the mayor of Crystal River in Citrus County and a candidate for the office  [***60]  of county tax assessor, had been charged in a federal court with perjury, and that his case had been held over until the following term of that court. 1  [****4]  This story was  [**630]  false.  The respondent had not been charged with any crime in federal court, nor had any case involving him been held over, but the story  [****3]  was substantially accurate as to his brother, James Damron. 2  Two weeks later the  [*297]  respondent was defeated in the election for county tax assessor.
+He filed the present suit against the Star-Banner in the Circuit Court of Marion County, Florida, alleging that the article was "libelous per se," and that it had caused him "irreparable damages to his reputation, as an individual, public officer, candidate for public office and as a businessman." He asked $ 50,000 as compensatory damages and $ 500,000 as punitive damages. At the trial, the newspaper did not deny that the story was wholly false as to the respondent, and explained the error as the result of a "mental aberration" by one of the paper's area editors.  The area editor had been working for the paper for a little more than a month.  He testified that he had run several stories about the political activities of the respondent, but had never heard of his brother James.  When a local reporter telephoned in the story, correctly identifying the protagonist as James Damron, he inadvertently changed the name.  The respondent presented evidence tending to cast doubt on this explanation.
+At the close of the evidence, the respondent [****5]  moved for a directed verdict on the issue of liability, and the trial judge granted the motion.  The case then went to the jury on the issue of damages, with instructions which included the following:
+"The Court instructs the Jury that you need not consider whether a libel has been committed and instructs you that there must be a finding in favor of the Plaintiff in accordance with the other instructions given you by the Court. . . .  You are instructed that in this case the charge made against the Plaintiff was libelous, per se, and that it created a presumption of damage to  [***61]  the Plaintiff but that  [*298]  if this presumption of damage is overcome by evidence offered by the parties and there is no proof of general damage to the Plaintiff by a preponderance of the evidence, then you cannot award anything more than nominal damages to the Plaintiff.  The Court instructs the Jury that if you believe from the evidence and by the instructions of the Court that the Plaintiff is entitled to recover from the Defendants, then in addition to any compensatory  [**631]  damages, if any, that he may have -- may recover, you may, as hereinafter stated, award the Plaintiff punitive [****6]  damages when malice is shown or implied. . . .  The Court instructs the Jury that malice may be implied or inferred where the charge of a felony is imputed to the Plaintiff.  In other words, if you are reasonably satisfied from the evidence that the Defendants imputed the charge of perjury to the Plaintiff, of which he was not guilty, then you may infer that it was maliciously made and it is not necessary to prove any express malice or ill-will in order to warrant a verdict for punitive damages in favor of the Plaintiff."
+
+The jury awarded Damron compensatory damages of $ 22,000 but failed to award any punitive damages. 
+
+ [1]The Star-Banner moved for a new trial, arguing that the case should have been sent to the jury under the "actual malice" test laid down by this Court in New York Times Co. v.  Sullivan, 376 U.S. 254.The trial judge denied the motion on the ground that New York Times and later cases "relating to public officials or public figures in the official conduct of their office or position are not applicable to this cause of action which was founded upon a newspaper publication of the Defendants which was libelous per se and made no reference  [****7]  to the public offices held or sought by the Plaintiff." The  [*299]  Florida District Court of Appeal affirmed the judgment, holding that:
+"An examination of the defamatory publication which gave rise to this case reveals that the plaintiff's official conduct or the manner in which he performed his duties were not the basis for the inaccuracy here involved; and, hence, it does not come within the protection afforded by the rule announced in the New York Times case.  It follows therefore that the trial judge correctly held that it was unnecessary for the plaintiff to show malice."  221 So. 2d 459, 461.
+
+The Supreme Court of Florida refused to review the judgment,  231 So. 2d 822, and we granted certiorari to consider the federal constitutional issues presented. 3   397 U.S. 1073.
+
+
+ [****8]   [2][3]As the mayor of Crystal River, the respondent Leonard Damron was without question a "public official" within the meaning given the term in New York Times Co. v.  [***62]  Sullivan, supra. As such, he clearly fell within the rule that "prohibits a public official from recovering damages for a defamatory falsehood relating to his official conduct unless he proves that the statement was made with 'actual malice' -- that is, with knowledge that it was false or with reckless disregard of whether it was false or not."  Id., at 279-280. In his status as a candidate for the office of county tax assessor, he fell within the same rule.  Monitor Patriot Co. v. Roy, ante, p. 265.
+ [*300]   [4]Yet it is clear that the New York Times test was not applied in the trial of this case.  The trial judge himself resolved the issues of publication and falsehood against the newspaper. He then instructed the jury that since the article was "libelous, per se," its only task was to determine damages.  Since the respondent was permitted to recover without a finding that the newspaper  [**632]  either knew the article was false or published it in reckless [****9]  disregard of its truth or falsity, the judgment must be reversed unless there is some basis for saying that the rule of New York Times does not apply to the particular libel in question.   Henry v. Collins, 380 U.S. 356; Curtis Publishing Co. v.  Butts, 388 U.S. 130, 142-143, 158 (opinion of HARLAN, J.); Greenbelt Cooperative Publishing Assn. v.  Bresler, 398 U.S. 6. 
+
+ [5]The respondent urges upon us that a basis for distinguishing New York Times does exist, because the rule of that case applies only to "official conduct," 4  and a charge of indictment for perjury committed during testimony in a federal civil rights suit is a purely "private" libel. This contention is disposed of by our decision today in Monitor Patriot Co. v. Roy, supra.  In that case we held that a charge of criminal conduct against an official or a candidate, no matter how remote in time or place, is always "relevant to his fitness for office" for purposes of applying the New York Times rule of knowing falsehood or reckless disregard of the truth.  Public discussion about the qualifications of a candidate for elective office  [****10]  presents what is probably the strongest possible case for application of the New York Times  [*301]  rule.  And under any test we can conceive, the charge that a local mayor and candidate for a county elective post has been indicted for perjury in a civil rights suit is relevant to his fitness for office.  Cf.   Garrison v. Louisiana, 379 U.S. 64, 77.
+The First and Fourteenth Amendments require reversal of the judgment.  The case is remanded for further proceedings not inconsistent with this opinion.
+It is so ordered.
+[For separate opinion of MR. JUSTICE BLACK,  [****11]  see ante, p. 277.] 
+Concur by: WHITE 
+Concur
+
+
+
+
+ [***63]  MR. JUSTICE WHITE, concurring. * 
+Inevitably, New York Times Co. v.  Sullivan, 376 U.S. 254 (1964), by imposing on libel and slander plaintiffs the burden of showing knowing or reckless falsehood in specified situations will result in extending constitutional protection to lies and falsehoods which, though neither knowing nor reckless, do severe damage to personal reputation. The First Amendment is not so construed, however, to award merit badges for intrepid but mistaken or careless reporting.  Misinformation has no merit in itself; standing alone it is as antithetical to the purposes of the First Amendment as the calculated lie.   Garrison v. Louisiana, 379 U.S. 64, 75 (1964). Its substance contributes nothing to intelligent decisionmaking by citizens or officials; it achieves nothing but gratuitous injury.  The sole basis for protecting publishers [****12]  who spread false information is that otherwise the truth would too often be suppressed.  That innocent falsehoods are sometimes protected only to ensure access to the truth has been noted before,  St. Amant v. Thompson, 390 U.S. 727, 732 (1968), and it is well that the thought is repeated today in Time, Inc. v. Pape, ante, p. 279, at 292.   
+References
+
+
+
+Constitutional aspects of libel and slander
+16 Am Jur 2d, Constitutional Law 341 et seq.; 50 Am Jur 2d, Libel and Slander 125-136, 174
+13 Am Jur Pl & Pr Forms, Libel and Slander, Forms 13:1 et seq.
+17 Am Jur Trials 223, Libel Actions by Public Officials
+US L Ed Digest, Constitutional Law 927.5
+ALR Digests, Constitutional Law 791, 794
+L Ed Index to Anno, Constitutional Law; Libel and Slander; Magazines; Newspapers
+ALR Quick Index, Constitutional Law; Libel and Slander; Magazines; Newspapers; New York Times Rule
+Federal Quick Index, Freedom of Speech and Press; Libel and Slander; Newspapers and Magazines
+              Annotation References:
+Constitutional aspects of libel and slander.  28 L Ed 2d 885.
+The Supreme Court [****13]  and the right of free speech and press.  93 L Ed 1151, 2 L Ed 2d 1706, 11 L Ed 2d 1116, 16 L Ed 2d 1053, 21 L Ed 2d 976.
+Libel and slander: what constitutes actual malice, within federal constitutional rule requiring public officials and public figures to show actual malice.  20 ALR3d 988.
+Libel and slander: who is a public official or otherwise within the federal constitutional rule requiring public officials to show actual malice.  19 ALR 3d 1361.
+Constitutional aspects of libel or slander of public officials.  95 ALR2d 1450.
+Libel and slander: actionability of statement imputing incapacity, inefficiency, misconduct, fraud, dishonesty, or the like to public officer or employee.  53 ALR2d 8.
+Libel and slander: statement or publication that plaintiff has been indicted or is under indictment.  52 ALR2d 1178.
+Doctrine of privilege or fair comment as applicable to misstatements of fact in publication relating to public officer or candidate for office.  110 ALR 412, 150 ALR 358.  
+
+ 
+
+End of Document
