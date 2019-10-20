@@ -33,14 +33,16 @@ create_query_string = function (citation_data) {
 # Partition by content category
 cb_data = bog_data %>% filter(cb == TRUE) %>% select(led, term) %>% distinct()  # Content-based
 cn_data = bog_data %>% filter(cn == TRUE) %>% select(led, term) %>% distinct()  # Content-neutral
+lp_data = bog_data %>% filter(lp == TRUE) %>% select(led, term) %>% distinct()  # Less-protected
 
 # Get citation strings, rewrite them, and transform them into LexisNexis query strings
-cb_query_string = create_query_string(rewrite_citations(cb_data))
+cb_query_string1 = create_query_string(rewrite_citations(cb_data[1:90,]))
+cb_query_string2 = create_query_string(rewrite_citations(cb_data[91:180,]))
+cb_query_string3 = create_query_string(rewrite_citations(cb_data[181:270,]))
+cb_query_string4 = create_query_string(rewrite_citations(cb_data[271:312,]))
 cn_query_string = create_query_string(rewrite_citations(cn_data))
+lp_query_string1 = create_query_string(rewrite_citations(lp_data[1:60,]))
+lp_query_string2 = create_query_string(rewrite_citations(lp_data[61:120,]))
+lp_query_string3 = create_query_string(rewrite_citations(lp_data[121:169,]))
 
 # Feed these queries manually into LexisNexis (no API access)
-print('Content-based cases:')
-print(cb_query_string)
-
-print('Content-neutral cases:')
-print(cn_query_string)
